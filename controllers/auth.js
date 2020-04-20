@@ -22,10 +22,10 @@ exports.signup = (req, res) => {
 
 exports.signin =(req, res) => {
   const { email, password} = req.body
-  user.findOne({email}, (err, user) => {
+  User.findOne({email}, (err, user) => {
     if(err || !user) {
       return res.status(400).json({
-        err: "User with this email does not exist. Please signup"
+        error: "User with this email does not exist. Please signup"
       });
     }
     // if user found than authentication
