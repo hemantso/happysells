@@ -41,6 +41,10 @@ app.use("/api", orderRoutes)
 
 const port = process.env.PORT || 8000;
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('../frontend/build'));
+}
+
 app.listen(port, ( ) => {
     console.log(`Server is running on port ${port}`);
 })
