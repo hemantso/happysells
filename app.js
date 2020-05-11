@@ -41,11 +41,11 @@ app.use("/api", productRoutes)
 app.use("/api", braintreeRoutes)
 app.use("/api", orderRoutes)
 
-const port = process.env.PORT || 8000;
-
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('./frontend/build'));
-}
+// const port = process.env.PORT || 8000;
+const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 8000) : 8000;
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static('./frontend/build'));
+// }
 
 app.listen(port, ( ) => {
     console.log(`Server is running on port ${port}`);
