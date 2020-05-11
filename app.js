@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
 app.use(cors());
-app.use('/api', expressJwt({secret: secret}));
+
 
 // routes middlewares
 app.use("/api", authRoutes)
