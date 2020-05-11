@@ -33,9 +33,9 @@ app.use(cookieParser());
 app.use(expressValidator());
 app.use(cors());
 
-const port = process.env.PORT || 8000;
+
 app.use(express.static(path.join(__dirname, './frontend/build')))
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './frontend/build'))
 });
 
@@ -47,7 +47,7 @@ app.use("/api", productRoutes)
 app.use("/api", braintreeRoutes)
 app.use("/api", orderRoutes)
 
-
+const port = process.env.PORT || 8000;
 
 app.listen(port, ( ) => {
     console.log(`Server is running on port ${port}`);
