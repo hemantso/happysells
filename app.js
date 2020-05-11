@@ -33,7 +33,9 @@ app.use(expressValidator());
 app.use(cors());
 
 const port = process.env.PORT || 8000;
-
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('./frontend/build'));
+}
 
 // routes middlewares
 app.use("/api", authRoutes)
