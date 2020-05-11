@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
     "build": "cd frontend && npm run build",
     "install-client": "cd frontend && npm install",
-    "heroku-postbuild": "npm start && npm run install-client && npm run build"
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
