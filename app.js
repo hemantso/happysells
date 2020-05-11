@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const expressValidator = require("express-validator");
+const expressJwt = require('express-jwt'); 
 const dotenv = require("dotenv");
 dotenv.config();
 const authRoutes = require("./routes/auth")
@@ -30,6 +31,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
 app.use(cors());
+app.use('/api', expressJwt({secret: secret}));
 
 // routes middlewares
 app.use("/api", authRoutes)
