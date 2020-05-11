@@ -6,7 +6,8 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const expressValidator = require("express-validator");
-const expressJwt = require('express-jwt'); 
+const expressJwt = require('express-jwt');
+const path = require('path') 
 const dotenv = require("dotenv");
 dotenv.config();
 const authRoutes = require("./routes/auth")
@@ -33,9 +34,10 @@ app.use(expressValidator());
 app.use(cors());
 
 const port = process.env.PORT || 8000;
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('./frontend/build'));
-}
+app.use(express.static(path.join(__dirname, './frontend/build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './frontend/build'))
+});
 
 // routes middlewares
 app.use("/api", authRoutes)
