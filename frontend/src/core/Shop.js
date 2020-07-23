@@ -100,7 +100,7 @@ const Shop = () => {
 
     return (
         <Layout
-            title="Shop Page"
+            title="Vijay Sales"
             description="Search and find items of your choice"
             className="container-fluid"
         >

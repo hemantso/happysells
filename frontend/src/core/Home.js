@@ -38,7 +38,7 @@ const Home = () => {
 
     return (
         <Layout
-            title="Welcome to HappySells"
+            title="Welcome to VijaySales"
             description="Buy electronic items at discounted price"
             className="container-fluid"
         >

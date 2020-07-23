@@ -73,8 +73,8 @@ const Signup = () => {
 
     return (
         <Layout
-            title="Signup"
-            description="Signup to HappySells"
+            title="Vijay Sales"
+            description="Signup to Vijay Sales"
             className="container col-md-8 offset-md-2"
         >
             {showSuccess()}
